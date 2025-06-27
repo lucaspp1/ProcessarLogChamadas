@@ -37,13 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = `modificado_${fileName}`; // Prefixo para o nome do arquivo
+                a.download = `modificado_${fileName}`.replace(".txt", ".csv"); // Prefixo para o nome do arquivo
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
                 URL.revokeObjectURL(url); // Libera a URL do objeto
 
-                messageDisplay.textContent = `Arquivo "${fileName}" processado e baixado como "modificado_${fileName}" com sucesso!`;
+                messageDisplay.textContent = `Arquivo "${fileName}" processado e baixado como "modificado_${fileName.replace(".txt", ".csv")}" com sucesso!`;
             };
 
             reader.onerror = () => {
@@ -174,7 +174,6 @@ function formatProcessContent(content) {
 }
 
 let i = 1
-
 
 // CONSTANTS
 const undStr = "ind"
