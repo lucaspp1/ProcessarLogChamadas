@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const content = e.target.result;
                 const lines = content.split('\n');
                 const modifiedLines = lines.filter( x => x.trim() && x.trim() != "\r" ).map(processarLinhas);
-                const modifiedContent = reogarnizeData(modifiedLines).join('\n');
+                const modifiedContent = modifiedLines.join('\n');
 
                 // Cria um Blob com o conteúdo modificado
                 const blob = new Blob([modifiedContent], { type: 'text/plain' });
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 URL.revokeObjectURL(url); // Libera a URL do objeto
 
                 messageDisplay.textContent = `Arquivo "${fileName}" processado e baixado como "modificado_${fileName.replace(".txt", ".csv")}" com sucesso!`;
-                document.getElementById("joinha").style.display = "block";
+                // document.getElementById("joinha").style.display = "block";
             };
 
             reader.onerror = () => {
@@ -74,10 +74,17 @@ function processarLinhas(line){
 }
 
 function reogarnizeData(fullData){
+    // inicio: '',
+    // fim: '',
     for (let idx = 0; idx < fullData.length; idx++) {
-        if( fullData[idx].fim ==  undStr && fullData[idx].inicio != undStr){
+        console.log({
+            teste: undStr,
+            teste2: fullData[idx]
+        })
+        if( fullData[idx].fim == undStr && fullData[idx].inicio != undStr){
+            console.log({teste: fullData[idx]})
             fullData[idx].fim =  Object.assign(fullData[idx].inicio);
-            fullData[idx].inicio = "00:00:00"; // fullData[idx].fim
+            fullData[idx].inicio = "00:00:00";
         }
     }
     return fullData;
@@ -109,8 +116,8 @@ function ExportDataRow() {
         exportFormat.time,
         exportFormat.tipo,
         exportFormat.ramal,
-        exportFormat.inicio,
-        exportFormat.fim,
+        exportFormat.fim == undStr ? "00:00:00" : exportFormat.inicio,
+        exportFormat.fim == undStr ? exportFormat.inicio : exportFormat.fim,
         exportFormat.telefone,
         exportFormat.user,
         exportFormat.status,
