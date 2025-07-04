@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const content = e.target.result;
                 const lines = content.split('\n');
                 const modifiedLines = lines.filter( x => x.trim() && x.trim() != "\r" ).map(processarLinhas);
-                const modifiedContent = modifiedLines.join('\n');
+                const modifiedContent = reogarnizeData(modifiedLines).join('\n');
 
                 // Cria um Blob com o conteúdo modificado
                 const blob = new Blob([modifiedContent], { type: 'text/plain' });
@@ -70,6 +70,15 @@ function processarLinhas(line){
         }
     }
     return ExportDataRow();
+}
+
+function reogarnizeData(fullData){
+    for (let idx = 0; idx < fullData.length; idx++) {
+        if( fullData[idx].fim ==  undStr && fullData[idx].inicio != undStr){
+            fullData[idx].fim =  Object.assign(fullData[idx].inicio);
+            fullData[idx].inicio = "00:00:00"; // fullData[idx].fim
+        }
+    }
 }
 
 // Funcoes Auxiliares
