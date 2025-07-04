@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 URL.revokeObjectURL(url); // Libera a URL do objeto
 
                 messageDisplay.textContent = `Arquivo "${fileName}" processado e baixado como "modificado_${fileName.replace(".txt", ".csv")}" com sucesso!`;
+                document.getElementById("joinha").style.display = "block";
             };
 
             reader.onerror = () => {
@@ -79,6 +80,7 @@ function reogarnizeData(fullData){
             fullData[idx].inicio = "00:00:00"; // fullData[idx].fim
         }
     }
+    return fullData;
 }
 
 // Funcoes Auxiliares

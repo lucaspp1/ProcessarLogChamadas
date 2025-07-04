@@ -11,6 +11,12 @@ body {
     box-sizing: border-box;
 }
 
+.joinha-unicode {
+    font-size: 150px; /* Altere este valor para o tamanho desejado */
+    color: #4CAF50; /* Cor verde para o joinha */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+}
+
 .container {
     background-color: #2c2c2c; /* Fundo do container mais escuro */
     padding: 40px;
