@@ -1,3 +1,5 @@
+let contWarningNotFoundToMap = 0;
+
 document.addEventListener('DOMContentLoaded', () => {
     const fileInput = document.getElementById('fileInput');
     const processButton = document.getElementById('processButton');
@@ -67,7 +69,7 @@ function processarLinhas(line){
 
         const element = parts[idx].trim();
         if (validField(element)) {
-            formatProcessContent(element);
+            formatProcessContent(element, line);
         }
     }
     return ExportDataRow();
@@ -142,7 +144,7 @@ function clearExportFormat() {
     exportFormat.pbax2 = undStr
 }
 
-function formatProcessContent(content) {
+function formatProcessContent(content, fullLine) {
 
     if (regexFilters.data.test(content))
         exportFormat.data = content;
@@ -153,11 +155,21 @@ function formatProcessContent(content) {
     if (regexFilters.ramal.test(content)) {
         
         const extraElements = getInfoByRamal(content)
-
         if(extraElements){
             exportFormat.setor = extraElements.setor
             exportFormat.status = extraElements.status
             exportFormat.user = extraElements.usuario
+        }else{
+            if(contWarningNotFoundToMap++ <= 15){
+
+                if(contWarningNotFoundToMap == 1){
+                    console.log(" === Conteudos não achados no mapeamento === ")    
+                }
+                console.log({
+                    NotFoundRamal: fullLine,
+                    ramal: content
+                });
+            }
         }
 
         if(exportFormat.ramal != undStr){
@@ -194,7 +206,7 @@ function formatProcessContent(content) {
 let i = 1
 
 // CONSTANTS
-const undStr = "ind"
+const undStr = "NAO ATENDIDO"
 
 const exportFormat = {
     data: '',
