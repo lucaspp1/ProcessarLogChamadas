@@ -262,7 +262,7 @@ const dePara = [
 { AUXILIAR:"KEILA 2ºANDAR RECEPÇÃO",  ramal: "3559",  usuario: "KEILA ", status: "ATIVO", setor: "PABX"},
 { AUXILIAR:"GIRLANE TI",  ramal: "3579",  usuario: "GIRLANE.TI", status: "ATIVO", setor: "T.I"},
 { AUXILIAR:"MARIA IZABEL CLINICA CARIACICA",  ramal: "3580",  usuario: "BEATRIZ CARIACICA", status: "ATIVO", setor: "CLINICA CARIACICA"},
-{ AUXILIAR:"WESLEY CLINICA VILA VELHA",  ramal: "3581",  usuario: "HERON VILA VELHA", status: "ATIVO", setor: "CLINICA VILA VELHA"},
+{ AUXILIAR:"SABRINNA CLINICA VILA VELHA",  ramal: "3581",  usuario: "SABRINNA VILA VELHA", status: "ATIVO", setor: "CLINICA VILA VELHA"},
 { AUXILIAR:"LAYANE HELLEN TREINAMENTOS",  ramal: "3582",  usuario: "LAYANE HELLEN", status: "ATIVO", setor: "TREINAMENTOS"},
 { AUXILIAR:"URA PABX",  ramal: "3560",  usuario: "URA", status: "ATIVADO", setor: "PABX"},
 { AUXILIAR:"CRED CREDENCIAMENTO",  ramal: "3625",  usuario: "CRED", status: "ATIVADO", setor: "PABX"},
