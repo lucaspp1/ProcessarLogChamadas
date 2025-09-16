@@ -331,7 +331,7 @@ const dePara = [
 { AUXILIAR:"FABIANA LIBERAÇÃO",  ramal: "3639",  usuario: "FABIANA", status: "ATIVO", setor: "LIBERAÇÃO"},
 { AUXILIAR:"URA LIBERAÇÃO",  ramal: "3640",  usuario: "URA", status: "ATIVADO", setor: "LIBERAÇÃO"},
 { AUXILIAR:"VANESSA AREA TECNICA",  ramal: "3617",  usuario: "VANESSA TECNICA", status: "ATIVO", setor: "AREA TECNICA"},
-{AUXILIAR:"EDRYELLEN COMERCIAL",  ramal: "3607",  usuario: "EDRYELLEN COMERCIAL", status: "ATIVO", setor: "COMERCIAL" 
-{AUXILIAR:"VILSON COMERCIAL",  ramal: "3608",  usuario: "VILSON COMERCIAL", status: "ATIVO", setor: "COMERCIAL"
+{ AUXILIAR:"EDRYELLEN COMERCIAL",  ramal: "3607",  usuario: "EDRYELLEN COMERCIAL", status: "ATIVO", setor: "COMERCIAL"}, 
+{ AUXILIAR:"VILSON COMERCIAL",  ramal: "3608",  usuario: "VILSON COMERCIAL", status: "ATIVO", setor: "COMERCIAL"
 
 }
